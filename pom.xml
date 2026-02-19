@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+
         <!-- Servlet API -->
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -34,17 +35,19 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Mockito (MODERN, Java 8+ SAFE) -->
+        <!-- Mockito -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>5.8.0</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
     <build>
         <plugins>
+
             <!-- Compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -54,6 +57,13 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+            </plugin>
+
+            <!-- ✅ WAR Plugin FIX (This stops the build failure) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>
             </plugin>
 
             <!-- Jetty runner copy -->
@@ -85,4 +95,3 @@
     </build>
 
 </project>
-
